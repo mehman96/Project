@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container-sm">
+<hr>
+<h3 class="text-primary"> Update Navbar</h3>
+<form action="/admin/navbarupdate/{{nav.id}}" method='POST'>
+<input type="text"  class="form-control my-2" name="navbar_icon_name" value="{{nav.navbar_icon_name}}"placeholder=" navbar icon name" >
+<input type="text"  class="form-control my-2" name="navbar_icon" value="{{nav.navbar_icon}}"placeholder="navbar icon" >
+<input type="text"  class="form-control my-2" name="navbar_name" value="{{nav.navbar_name}}"  placeholder="navbar name" >
+<input type="text"  class="form-control my-2" name="navbar_name_url" value="{{nav.navbar_name_url}}"  placeholder="navbar name url" >
+<input type="submit" class="btn btn-primary btn-lg" value="Update Navbar">
+<hr>
+</form>
+</div>
+{% endblock %}

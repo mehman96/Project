@@ -1,0 +1,56 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container bg-dark bg-gradient">
+<hr>
+<div class="row">
+<h3 class="text-primary" >Add Resume.Sum</h3>
+<div class="col-12">
+<form action="/admin/rsum" method='POST'>
+    <input type="text" class="form-control my-2"name="resume_heading"placeholder="resume heading">
+    <input type="text" class="form-control my-2"name="resume_subheading"placeholder="resume subheading"> 
+    <input type="submit" class="btn btn-primary" value="Add Resume Sum">
+    <hr>
+</form>
+</div>
+<hr>
+<div class="col-12">
+<h3 class="text-warning">Resume Sum</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-warning">id</th>
+            <th class="text-warning">heading</th>
+            <th class="text-warning">subheading</th>
+            <th class="text-warning">desc</th>
+            <th class="text-warning">info txt</th>
+            <th class="text-warning">Actions</th>
+        </tr>
+    </thead>
+    <hr>
+</div>
+<div class="col align-self-end">
+    <tbody>
+        {% for sum  in sums %}
+
+        <tr>
+            <td class="text-primary"scope="row">{{sum.id}}</td>
+            <td class="text-primary">{{sum.resume_heading}}</td>
+            <td class="text-primary">{{sum.resume_subheading}}</td>
+
+            <td>
+                <a href="/admin/rsumdelete/{{sum.id}}"> <i class="fas fa-trash-alt"></i></a>
+                <a href="/admin/rsumupdate/{{sum.id}}"> <i class="fas fa-edit"></i></a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+     </div>
+   </div>
+</div>
+
+
+
+{% endblock %}

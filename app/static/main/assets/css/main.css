@@ -1,0 +1,122 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+.aida{
+    color: black;
+}
+
+.icon{
+    font-size: 25px;
+    color: black;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#portfolios {
+    color: black;
+}
+
+.portfolios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 20px auto;
+  
+}
+
+.portfolio {
+    box-shadow: -1px 2px 40px -13px rgba(215, 191, 148, 0.49);
+    -webkit-box-shadow: -1px 2px 40px -13px rgba(215, 191, 148, 0.49);
+    -moz-box-shadow: -1px 2px 40px -13px rgba(215, 191, 148, 0.49);
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: .5s ease;
+    color: black;
+    object-fit: cover;
+    
+}
+
+.portfolio:hover {
+    box-shadow: -1px 0px 30px -5px rgba(73, 97, 215, 0.75);
+    -webkit-box-shadow: -1px 0px 30px -5px rgba(73, 97, 215, 0.75);
+    -moz-box-shadow: -1px 0px 30px -5px rgba(73, 97, 215, 0.75);
+}
+
+.portfolio img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.portfolio h3:hover {
+    color: #e54b4b;
+}
+
+.portfolio-content {
+    padding: 25px 20px;
+    color: black;
+}
+
+.portfolio-content h3 {
+    line-height: 32px;
+    margin: 20px 0;
+    font-size: 21px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    transition: .5s ease;
+    color: black;
+}
+
+.portfolio-content span {
+    font-size: 14px;
+    letter-spacing: 1px;
+
+}
+
+.portfolio-author {
+    display: flex;
+    justify-content: space-between;
+}
+
+.portfolio-author i {
+    margin-right: 4px;
+}
+
+.portfolio-author span {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.portfolio-footer {
+    padding-top: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio-footer .far {
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.portfolio-footer-content {
+    display: flex;
+}
+
+.portfolio-line {
+    border-bottom: 1px solid #495057;
+}
+
+
+
+@media (max-width:576px) {
+    .portfolios{
+        grid-template-columns: 1fr;
+    }
+}

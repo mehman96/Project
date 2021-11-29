@@ -1,0 +1,54 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container bg-dark bg-gradient">
+<hr>
+<div class="row">
+<h3 class="text-primary">Add Blog Heading</h3>
+<div class="col-12">
+<form action="/admin/bloghead" method='POST'>
+    <input type="text" class="form-control my-2" name="blog_subheading" placeholder="Blog subheading ">
+    <input type="text" class="form-control my-2" name="blog_heading" placeholder="Blog heading">
+    <input type="submit" class="btn btn-primary" value="Add Blog heading">
+<hr>
+</form>
+</div>
+<hr>
+<div class="col-12">
+<h3 class="text-warning">Blog Heading</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-warning">id</th>
+            <th class="text-warning">Subheading</th>
+            <th class="text-warning">Heading</th>
+            <th class="text-warning">Actions</th>
+        </tr>
+    </thead>
+    <hr>
+</div>
+<div class="col align-self-end">
+    <tbody>
+        {% for bloghead in blogheads %}
+
+        <tr>
+            <td class="text-primary"  scope="row">{{bloghead.id}}</td>
+            <td class="text-primary">{{bloghead.blog_subheading}}</td>
+            <td class="text-primary">{{bloghead.blog_heading}}</td>
+
+            <td>
+                <a href="/admin/blogheaddelete/{{bloghead.id}}"> <i class="fas fa-trash-alt"></i></a>
+                <a href="/admin/blogheadupdate/{{bloghead.id}}"> <i class="fas fa-edit"></i></a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+     </div>
+   </div>
+</div>
+
+
+
+{% endblock %}

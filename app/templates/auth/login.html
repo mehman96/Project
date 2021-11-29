@@ -1,0 +1,47 @@
+{% extends "auth/base.html" %}
+
+{% block content %}
+
+<!-- <form action="/login" method="POST" >
+<input class="form-control" type="text" name="username"  placeholder="username">
+<input class="form-control" type="password" name="password" placeholder="password">
+<input type="submit" value="Login"> -->
+
+<link rel="stylesheet" href="../../static/login/style.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container h-80">
+<div class="row align-items-center img-xs  "    >
+    <div class="col-3 mx-auto">
+        <div class="text-center">
+           <img id="profile-img" class="rounded-circle profile-img-card" src="../../static/login/img/mask.jpg"> 
+            <p id="profile-name" class="profile-name-card"></p>
+            <form  class="form-signin"action="/login" method="POST"   >
+              <input type="text" name="username" id="inputPassword" class="form-control form-group" placeholder="username" required autofocus>
+                <input type="password" name="password" id="inputPassword" class="form-control form-group" placeholder="password" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="Login" >Login</button>
+            </form><!-- /form -->
+        </div>
+    </div>
+</div>
+</div>
+
+<link rel="stylesheet" href="../../static/login/script.js">
+
+
+
+
+
+
+
+
+<!-- </form> -->
+
+
+
+
+
+{% endblock %}

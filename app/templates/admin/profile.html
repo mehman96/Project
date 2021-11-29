@@ -1,0 +1,74 @@
+{% extends "admin/base.html" %}
+
+{% block css %}
+<style>
+.form-control{
+  border: 1px solid #2c2e33 !important;
+  height: calc(2.25rem + 2px) !important;
+  font-weight: normal !important;
+  font-size: 0.875rem !important;
+  padding: 0.625rem 0.6875rem !important;
+  background-color: #2A3038 !important;
+  border-radius: 2px !important;
+  color: #ffffff !important;
+}
+</style>
+{% endblock css %}
+{% block content %}
+
+<div class="container bg-gradient bg">
+  <hr>
+    <div class="row">
+      <h3 class="text-primary">Add profile</h3>
+      <div class="col-12  ">
+        <form action="/admin/profile" method='POST'enctype="multipart/form-data">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="../../static/base/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <input type="text" class="form-control my-2" name="social_icon_name" placeholder="icon name" >
+        <input type="text" class="form-control my-2" name="social_icon" placeholder="icon ">
+        <input type="text" class="form-control my-2" name="social_icon_url" placeholder="icon url">
+        <input type="submit" class="btn btn-primary btn-lg" value="Add Profile">
+        <hr>
+        </form>
+      </div>
+<hr>
+ <div class="col align-self-center">
+<h3 class="text-warning"> Profile</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-warning" >id</th>
+            <th class="text-warning" >İcon name</th>
+            <th class="text-warning" >İcon</th>
+            <th class="text-warning" > İcon url</th>
+            <th class="text-warning" >Actions</th>
+        </tr>
+    </thead>
+    <hr>
+      </div>
+      <div class="col align-self-end">
+  <tbody>
+        {% for profile in profiles %}
+
+        <tr>
+            <td  class="text-primary" scope="row">{{profile.id}}</td>
+            <td class="text-primary" >{{profile.social_icon_mame}}</td>
+            <td class="text-primary">{{profile.social_icon}}</td>
+            <td class="text-primary">{{profile.social_icon_url}} </td>
+ 
+            <td>
+                <a href="/admin/profiledelete/{{profile.id}}"> <i class="fas fa-trash-alt  "></i></a>
+                <a href="/admin/profileupdate/{{profile.id}}"> <i class="fas fa-edit"></i></a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+       
+</table>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

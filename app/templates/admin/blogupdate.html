@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container-sm">
+<hr>
+<h3 class="text-primary"> Update Blog</h3>
+<form action="/admin/blogupdate/{{blog.id}}" method='POST'>
+<input type="text"  class="form-control my-2" name="blog_icon_name"  placeholder="icon name" value="{{blog.blog_icon_name}}">
+<input type="text"  class="form-control my-2" name="blog_icon"  placeholder="icon" value="{{blog.blog_icon}}">
+<input type="text"  class="form-control my-2" name="blog_link"  placeholder="link " value="{{blog.blog_link}}">
+<input type="text"  class="form-control my-2" name="blog_head"  placeholder="head" value="{{blog.blog_head}}">
+<input type="text"  class="form-control my-2" name="blog_txt"  placeholder="txt" value="{{blog.blog_txt}}">
+<input type="submit" class="btn btn-primary btn-lg" value="Update Blog">
+<hr>
+</form>
+</div>
+{% endblock %}

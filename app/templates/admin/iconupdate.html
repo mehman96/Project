@@ -1,0 +1,17 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container-sm">
+<hr>
+<h3 class="text-primary">Contact  Icon Update</h3>
+<form action="/admin/iconupdate/{{icon.id}}" method='POST'>
+<input type="text" class="form-control my-2" name="contact_icon" placeholder="sub heading" value="{{icon.contact_icon}}">
+<input type="text" class="form-control my-2" name="contact_icon_txt" placeholder="sub heading" value="{{icon.contact_icon_txt}}">
+<input type="text" class="form-control my-2" name="contact_desc" placeholder="sub heading" value="{{icon.contact_desc}}">
+<input type="text" class="form-control my-2" name="contact_link" placeholder="heading"value="{{icon.contact_link}}">
+<input type="submit" class="btn btn-primary btn-lg" value=" Contact  Icon Update">
+<hr>
+</form>
+</div>
+
+{% endblock %}

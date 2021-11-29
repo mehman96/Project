@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container-sm">
+<hr>
+<h3 class="text-primary"> Update Profile</h3>
+<form action="/admin/profileupdate/{{profile.id}}" method='POST' enctype="multipart/form-data">
+<hr>
+<input type="text"  class="form-control my-2" name="social_icon_name" value="{{profile.social_icon_name}}"  placeholder=" social icon name" >
+<input type="text"  class="form-control my-2" name="social_icon" value="{{profile.social_icon}}"  placeholder="social icon " >
+<input type="text"  class="form-control my-2" name="social_icon_url" value="{{profile.social_icon_url}}"  placeholder=" social icon url" >
+<hr>
+<input type="submit" class="btn btn-primary btn-lg" value="Update Profile">
+</form>
+</div>
+{% endblock %}

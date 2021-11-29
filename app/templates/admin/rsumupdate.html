@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+<div class="container-sm">
+<hr>
+<h3 class="text-primary"> Update Summary </h3>
+<form action="/admin/rsumupdate/{{sum.id}}" method='POST'>
+<input type="text" class="form-control my-2" name="resume_heading" placeholder="heading" value="{{sum.resume_heading}}">
+<input type="text" class="form-control my-2" name="resume_subheading" placeholder="heading" value="{{sum.resume_subheading}}">
+<input type="submit" class="btn btn-primary" value="Resume Sum update">
+<hr>
+</form>
+</div>
+{% endblock %}
